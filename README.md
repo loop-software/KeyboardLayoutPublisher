@@ -4,14 +4,14 @@ A Combine Publisher to notify of major keyboard layout changes (outlined in [UIR
 
 ## Usage
 To subscibe to layout changes initialize the publisher with the desired layout events.
-```
+```swift
 let keyboardWillChange = SoftwareKeyboardLayoutPublisher(
     events: [.willShow, .willHide]
 )
 ```
 
 Basic keyboard avoidance can be implemented in a view controller with `UIScrollView`
-```
+```swift
 _ = keyboardWillChange
     .subscribe(on: RunLoop.main)
     .map { $0.endFrame.height }
@@ -23,7 +23,7 @@ _ = keyboardWillChange
 ```
 
 For more advanced keyboard avoidance:
-```
+```swift
 _ = keyboardWillChange
     .subscribe(on: RunLoop.main)
     .sink(receiveValue: adjustView(forKeyboardLayout:))
