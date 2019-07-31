@@ -2,6 +2,16 @@
 
 A Combine Publisher to notify of major keyboard layout changes (outlined in [UIResponder](https://developer.apple.com/documentation/uikit/uiresponder) under Type Properties)
 
+## Prerequisites
+iOS 13.0+
+Xcode 11.0+
+
+## Installation
+Include this in your Package.swift dependencies
+```swift
+.package(url: "https://github.com/loop-software/KeyboardLayoutPublisher", from: "1.0.0")
+```
+
 ## Usage
 To subscibe to layout changes initialize the publisher with the desired layout events.
 ```swift
